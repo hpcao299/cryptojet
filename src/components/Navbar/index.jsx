@@ -11,21 +11,26 @@ import {
    ListItemText,
    Typography,
 } from "@mui/material";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation } from "react-router-dom";
 import useStyles from "./styles";
 
 function Navbar() {
+   const location = useLocation();
    const classes = useStyles();
-   const [selectedIndex, setSelectedIndex] = useState(0);
+   const [currentPathname, setCurrentPathname] = useState(location.pathname);
 
-   const handleLinkItemClick = index => setSelectedIndex(index);
+   const handleLinkItemClick = pathname => setCurrentPathname(pathname);
+
+   useEffect(() => {
+      setCurrentPathname(location.pathname);
+   }, [location.pathname]);
 
    return (
       <Drawer variant="permanent" className={classes.drawer}>
          <Typography
             variant="h5"
-            sx={{ py: 2, px: 6.5, fontFamily: "DM Sans", color: "primary.contrastText" }}
+            sx={{ py: 2, px: 7, fontFamily: "DM Sans", color: "primary.contrastText" }}
             align="center"
          >
             <Link to="/">Cryptojet</Link>
@@ -35,8 +40,8 @@ function Navbar() {
                <ListItemButton
                   component={Link}
                   to="/"
-                  selected={selectedIndex === 0}
-                  onClick={() => handleLinkItemClick(0)}
+                  selected={currentPathname === "/"}
+                  onClick={() => handleLinkItemClick("/")}
                >
                   <ListItemIcon>
                      <HomeOutlinedIcon />
@@ -46,8 +51,8 @@ function Navbar() {
                <ListItemButton
                   component={Link}
                   to="/cryptocurrencies"
-                  selected={selectedIndex === 1}
-                  onClick={() => handleLinkItemClick(1)}
+                  selected={currentPathname === "/cryptocurrencies"}
+                  onClick={() => handleLinkItemClick("/cryptocurrencies")}
                >
                   <ListItemIcon>
                      <InsertChartOutlinedIcon />
@@ -57,8 +62,8 @@ function Navbar() {
                <ListItemButton
                   component={Link}
                   to="/exchanges"
-                  selected={selectedIndex === 3}
-                  onClick={() => handleLinkItemClick(3)}
+                  selected={currentPathname === "/exchanges"}
+                  onClick={() => handleLinkItemClick("/exchanges")}
                >
                   <ListItemIcon>
                      <CurrencyExchangeOutlinedIcon />
@@ -68,8 +73,8 @@ function Navbar() {
                <ListItemButton
                   component={Link}
                   to="/news"
-                  selected={selectedIndex === 4}
-                  onClick={() => handleLinkItemClick(4)}
+                  selected={currentPathname === "/news"}
+                  onClick={() => handleLinkItemClick("/news")}
                >
                   <ListItemIcon>
                      <LightbulbOutlinedIcon />
