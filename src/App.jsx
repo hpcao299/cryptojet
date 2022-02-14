@@ -1,10 +1,10 @@
 import { ThemeProvider } from "@mui/material";
 import { Navbar } from "./components";
-import theme from "./config/theme";
+import customTheme from "./customTheme";
 
 function App() {
    return (
-      <ThemeProvider theme={theme}>
+      <ThemeProvider theme={customTheme}>
          <Navbar />
       </ThemeProvider>
    );

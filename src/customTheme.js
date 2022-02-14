@@ -1,7 +1,7 @@
 import { lightBlue } from "@mui/material/colors";
 import { createTheme } from "@mui/material/styles";
 
-const theme = createTheme({
+const customTheme = createTheme({
    primary: {
       main: lightBlue,
       dark: lightBlue[600],
@@ -10,4 +10,4 @@ const theme = createTheme({
    },
 });
 
-export default theme;
+export default customTheme;
