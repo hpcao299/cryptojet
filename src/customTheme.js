@@ -8,6 +8,14 @@ const customTheme = createTheme({
       light: lightBlue[300],
       contrastText: "#fff",
    },
+   secondary: {
+      contrastText: "rgba(0, 0, 0, 0.6)",
+   },
+   palette: {
+      text: {
+         secondary: "#8A898C",
+      },
+   },
 });
 
 export default customTheme;

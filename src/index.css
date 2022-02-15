@@ -15,8 +15,13 @@ a {
 .main {
    width: calc(100% - 217px);
    margin-left: 217px;
+   background-color: #f2f2f5;
 }
 
 .content {
-   padding: 20px 20px 40px;
+   padding: 20px 28px 40px;
+}
+
+.primary-link {
+   color: #1876d1;
 }

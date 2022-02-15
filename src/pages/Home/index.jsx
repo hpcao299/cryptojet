@@ -1,55 +1,51 @@
-import { Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
+import millify from "millify";
+import { Link } from "react-router-dom";
+import { Cryptocurrencies } from "../../components";
+import Statistic from "../../components/Statistic";
+import { useGetCryptosQuery } from "../../services/cryptoApi";
 
-function Home() {
+function HomePage() {
+   const { data, isFetching } = useGetCryptosQuery(12);
+   const globalStats = data?.data?.stats;
+
+   if (isFetching) return <div>Loading...</div>;
+
    return (
       <>
          <Typography variant="h4" sx={{ fontSize: "30px" }} gutterBottom>
             Global Crypto Stats
          </Typography>
-         <Grid container>
+         <Grid container sx={{ mb: 5 }}>
             <Grid item lg={6}>
-               <Typography variant="body2" sx={{ color: "#8A898C" }}>
-                  Total Cryptocurrencies
-               </Typography>
-               <Typography variant="h5" gutterBottom>
-                  5
-               </Typography>
+               <Statistic title="Total Cryptocurrencies" value={globalStats.total} />
             </Grid>
             <Grid item lg={6}>
-               <Typography variant="body2" sx={{ color: "#8A898C" }}>
-                  Total Exchanges
-               </Typography>
-               <Typography variant="h5" gutterBottom>
-                  5
-               </Typography>
+               <Statistic title="Total Exchanges" value={millify(globalStats.totalExchanges)} />
             </Grid>
             <Grid item lg={6}>
-               <Typography variant="body2" sx={{ color: "#8A898C" }}>
-                  Total Market Cap
-               </Typography>
-               <Typography variant="h5" gutterBottom>
-                  5
-               </Typography>
+               <Statistic title="Total Market Cap" value={millify(globalStats.totalMarketCap)} />
             </Grid>
             <Grid item lg={6}>
-               <Typography variant="body2" sx={{ color: "#8A898C" }}>
-                  Total 24h Volume
-               </Typography>
-               <Typography variant="h5" gutterBottom>
-                  5
-               </Typography>
+               <Statistic title="Total 24h Volume" value={millify(globalStats.total24hVolume)} />
             </Grid>
             <Grid item lg={6}>
-               <Typography variant="body2" sx={{ color: "#8A898C" }}>
-                  Total Markets
-               </Typography>
-               <Typography variant="h5" gutterBottom>
-                  5
-               </Typography>
+               <Statistic title="Total Markets" value={millify(globalStats.totalMarkets)} />
             </Grid>
          </Grid>
+         <Box sx={{ display: "flex", justifyContent: "space-between", mb: 2 }}>
+            <Typography variant="h4" sx={{ fontSize: "30px" }}>
+               Top 10 Cryptocurrencies in the world
+            </Typography>
+            <Typography variant="h6" sx={{ fontWeight: 400 }}>
+               <Link to="/cryptocurrencies" className="primary-link">
+                  Show More
+               </Link>
+            </Typography>
+         </Box>
+         <Cryptocurrencies simplified />
       </>
    );
 }
 
-export default Home;
+export default HomePage;

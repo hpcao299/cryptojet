@@ -5,24 +5,24 @@ function Footer() {
    return (
       <Box sx={{ backgroundColor: "#00152B", py: 3 }} component="footer">
          <Typography variant="h6" align="center" color="primary.contrastText">
-            Cryptojet
+            <RouteLink to="/">Cryptojet</RouteLink>
          </Typography>
          <Typography align="center" color="#dbe3e8" gutterBottom>
             © All rights reserved
          </Typography>
          <Grid container spacing={2} sx={{ justifyContent: "center" }}>
             <Grid item>
-               <Link component={RouteLink} to="/">
+               <Link component={RouteLink} underline="hover" to="/">
                   Home
                </Link>
             </Grid>
             <Grid item>
-               <Link component={RouteLink} to="/exchanges">
+               <Link component={RouteLink} underline="hover" to="/exchanges">
                   Exchanges
                </Link>
             </Grid>
             <Grid item>
-               <Link component={RouteLink} to="/news">
+               <Link component={RouteLink} underline="hover" to="/news">
                   News
                </Link>
             </Grid>
