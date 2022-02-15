@@ -1,7 +1,7 @@
 import { Cryptocurrencies } from "../../components";
 
 function CryptocurrenciesPage() {
-   return <Cryptocurrencies searching />;
+   return <Cryptocurrencies />;
 }
 
 export default CryptocurrenciesPage;

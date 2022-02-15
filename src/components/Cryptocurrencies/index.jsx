@@ -33,7 +33,7 @@ function Cryptocurrencies({ simplified, searching }) {
    console.log(cryptos);
    return (
       <>
-         {searching && <SearchInput values={{ searchTerm, setSearchTerm }} />}
+         {!simplified && <SearchInput values={{ searchTerm, setSearchTerm }} />}
          <Grid container spacing={3}>
             {cryptos?.map(crypto => (
                <Grid item lg={3} xs={12} sm={6} key={crypto.uuid}>

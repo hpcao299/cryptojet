@@ -35,7 +35,7 @@ function HomePage() {
          </Grid>
          <Box sx={{ display: "flex", justifyContent: "space-between", mb: 2 }}>
             <Typography variant="h4" sx={{ fontSize: "30px" }}>
-               Top 10 Cryptocurrencies in the world
+               Top Cryptocurrencies in the World
             </Typography>
             <Typography variant="h6" sx={{ fontWeight: 400 }}>
                <Link to="/cryptocurrencies" className="primary-link">
