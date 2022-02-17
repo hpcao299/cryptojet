@@ -11,6 +11,7 @@ function SearchInput({ values }) {
             variant="outlined"
             sx={{ width: "250px" }}
             value={searchTerm}
+            name="coin"
             onChange={e => setSearchTerm(e.target.value)}
          />
       </Box>

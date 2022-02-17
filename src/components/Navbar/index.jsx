@@ -16,15 +16,15 @@ import { Link, useLocation } from "react-router-dom";
 import useStyles from "./styles";
 
 function Navbar() {
-   const location = useLocation();
+   const { pathname } = useLocation();
    const classes = useStyles();
-   const [currentPathname, setCurrentPathname] = useState(location.pathname);
+   const [currentPathname, setCurrentPathname] = useState(pathname);
 
    const handleLinkItemClick = pathname => setCurrentPathname(pathname);
 
    useEffect(() => {
-      setCurrentPathname(location.pathname);
-   }, [location.pathname]);
+      setCurrentPathname(pathname);
+   }, [pathname]);
 
    return (
       <Drawer variant="permanent" className={classes.drawer}>

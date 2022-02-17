@@ -1,3 +1,8 @@
+:root {
+   --sidebar-width: 217px;
+   --footer-height: 128px;
+}
+
 * {
    margin: 0;
    padding: 0;
@@ -13,13 +18,21 @@ a {
 }
 
 .main {
-   width: calc(100% - 217px);
-   margin-left: 217px;
+   width: calc(100% - var(--sidebar-width));
+   margin-left: var(--sidebar-width);
    background-color: #f2f2f5;
 }
 
 .content {
    padding: 20px 28px 40px;
+}
+
+.not-found {
+   height: calc(100vh - var(--footer-height) - 20px - 40px);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
 }
 
 .primary-link {
