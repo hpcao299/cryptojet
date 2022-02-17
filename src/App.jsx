@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { useRoutes } from "react-router-dom";
 import { Footer, Navbar } from "./components";
 import customTheme from "./customTheme";
+import ScrollToTop from "./hooks/ScrollToTop";
 import routes from "./pages/routes";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
    return (
       <ThemeProvider theme={customTheme}>
          <Navbar />
+         <ScrollToTop />
          <div className="main">
             <Suspense fallback={<div>Loading...</div>}>
                <div className="content">{router}</div>
