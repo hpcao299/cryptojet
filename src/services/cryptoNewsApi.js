@@ -19,7 +19,7 @@ export const cryptoNewsApi = createApi({
       getCryptoNews: builder.query({
          query: ({ newsCategory, count }) =>
             createRequest(
-               `/news?textFormat=Raw&safeSearch=Off&category=${newsCategory}&count=${count}`
+               `/news/search?textFormat=Raw&safeSearch=Off&q=${newsCategory}&count=${count}&freshness=Day`
             ),
       }),
    }),

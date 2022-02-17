@@ -1,7 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import millify from "millify";
 import { Link } from "react-router-dom";
-import { Cryptocurrencies } from "../../components";
+import { Cryptocurrencies, CryptoNews } from "../../components";
 import Statistic from "../../components/Statistic";
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 
@@ -44,6 +44,17 @@ function HomePage() {
             </Typography>
          </Box>
          <Cryptocurrencies simplified />
+         <Box sx={{ display: "flex", justifyContent: "space-between", mb: 2 }}>
+            <Typography variant="h4" sx={{ fontSize: "30px" }}>
+               Latest Crypto News
+            </Typography>
+            <Typography variant="h6" sx={{ fontWeight: 400 }}>
+               <Link to="/news" className="primary-link">
+                  Show More
+               </Link>
+            </Typography>
+         </Box>
+         <CryptoNews simplified />
       </>
    );
 }

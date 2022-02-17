@@ -14,7 +14,7 @@ import { useGetCryptosQuery } from "../../services/cryptoApi";
 import SearchInput from "./SearchInput";
 import useStyles from "./styles";
 
-function Cryptocurrencies({ simplified, searching }) {
+function Cryptocurrencies({ simplified }) {
    const count = simplified ? 12 : 100;
    const { data: cryptosList, isFetching } = useGetCryptosQuery(count);
    const [cryptos, setCryptos] = useState([]);
@@ -30,30 +30,29 @@ function Cryptocurrencies({ simplified, searching }) {
 
    if (isFetching) return <div>Loading...</div>;
 
-   console.log(cryptos);
    return (
       <>
          {!simplified && <SearchInput values={{ searchTerm, setSearchTerm }} />}
-         <Grid container spacing={3}>
-            {cryptos?.map(crypto => (
-               <Grid item lg={3} xs={12} sm={6} key={crypto.uuid}>
+         <Grid container spacing={3} sx={{ mb: 5 }}>
+            {cryptos?.map(coin => (
+               <Grid item lg={3} xs={12} sm={6} md={4} key={coin.uuid}>
                   <Card>
                      <CardActionArea>
-                        <Link to={`/crypto/${crypto.uuid}`}>
+                        <Link to={`/crypto/${coin.uuid}`}>
                            <CardHeader
                               className={classes.cardHeader}
-                              title={crypto.name}
-                              avatar={<Avatar src={crypto.iconUrl} alt={crypto.name} />}
+                              title={coin.name}
+                              avatar={<Avatar src={coin.iconUrl} alt={coin.name} />}
                            />
                            <CardContent>
                               <Typography sx={{ color: "rgba(0, 0, 0, 0.7)" }} gutterBottom>
-                                 Price: {millify(crypto.price)}
+                                 Price: {millify(coin.price)} USD
                               </Typography>
                               <Typography sx={{ color: "rgba(0, 0, 0, 0.7)" }} gutterBottom>
-                                 Market Cap: {millify(crypto.marketCap)}
+                                 Market Cap: {millify(coin.marketCap)}
                               </Typography>
                               <Typography sx={{ color: "rgba(0, 0, 0, 0.7)" }}>
-                                 Daily Change: {millify(crypto.change)}%
+                                 Daily Change: {millify(coin.change)}%
                               </Typography>
                            </CardContent>
                         </Link>
