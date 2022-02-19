@@ -38,7 +38,7 @@ function Cryptocurrencies({ simplified }) {
                <Grid item lg={3} xs={12} sm={6} md={4} key={coin.uuid}>
                   <Card>
                      <CardActionArea>
-                        <Link to={`/crypto/${coin.uuid}`}>
+                        <Link to={`/coin/${coin.uuid}`}>
                            <CardHeader
                               className={classes.cardHeader}
                               title={coin.name}
