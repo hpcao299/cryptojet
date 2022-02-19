@@ -2,6 +2,7 @@ import { Avatar, Box, Card, CardActionArea, Grid, Typography } from "@mui/materi
 import moment from "moment";
 import { useState } from "react";
 import { useGetCryptoNewsQuery } from "../../services/cryptoNewsApi";
+import Loader from "../Loader";
 import SelectCategory from "./SelectCategory";
 
 const demoImage = "https://i1.sndcdn.com/artworks-000308862003-0uqeas-t240x240.jpg";
@@ -14,7 +15,7 @@ function CryptoNews({ simplified }) {
       count,
    });
 
-   if (!cryptoNews?.value) return <div>Loading...</div>;
+   if (!cryptoNews?.value) return <Loader />;
 
    return (
       <>

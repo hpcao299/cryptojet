@@ -1,7 +1,7 @@
 import { Box, Grid, Typography } from "@mui/material";
 import millify from "millify";
 import { Link } from "react-router-dom";
-import { Cryptocurrencies, CryptoNews } from "../../components";
+import { Cryptocurrencies, CryptoNews, Loader } from "../../components";
 import Statistic from "../../components/Statistic";
 import { useGetCryptosQuery } from "../../services/cryptoApi";
 
@@ -9,7 +9,7 @@ function HomePage() {
    const { data, isFetching } = useGetCryptosQuery(12);
    const globalStats = data?.data?.stats;
 
-   if (isFetching) return <div>Loading...</div>;
+   if (isFetching) return <Loader />;
 
    return (
       <>

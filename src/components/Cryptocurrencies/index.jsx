@@ -11,6 +11,7 @@ import millify from "millify";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { useGetCryptosQuery } from "../../services/cryptoApi";
+import Loader from "../Loader";
 import SearchInput from "./SearchInput";
 import useStyles from "./styles";
 
@@ -28,7 +29,7 @@ function Cryptocurrencies({ simplified }) {
       setCryptos(filteredData);
    }, [cryptosList, searchTerm]);
 
-   if (isFetching) return <div>Loading...</div>;
+   if (isFetching) return <Loader />;
 
    return (
       <>

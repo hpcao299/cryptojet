@@ -35,6 +35,13 @@ a {
    flex-direction: column;
 }
 
+.loader {
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
 .primary-link {
    color: #0288d1;
 }
