@@ -9,6 +9,8 @@ import routes from "./pages/routes";
 function App() {
    const router = useRoutes(routes);
 
+   console.log(process.env.REACT_APP_API_KEY);
+
    return (
       <ThemeProvider theme={customTheme}>
          <Navbar />
