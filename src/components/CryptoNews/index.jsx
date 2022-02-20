@@ -32,7 +32,7 @@ function CryptoNews({ simplified }) {
                               </Typography>
                               <img
                                  src={cryptoNew?.image?.thumbnail?.contentUrl || demoImage}
-                                 alt="New Img"
+                                 alt="News"
                                  width="40%"
                               />
                            </Box>
