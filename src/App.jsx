@@ -1,7 +1,7 @@
 import { ThemeProvider } from "@mui/material";
 import { Suspense } from "react";
 import { useRoutes } from "react-router-dom";
-import { Footer, Navbar } from "./components";
+import { Footer, Loader, Navbar } from "./components";
 import customTheme from "./customTheme";
 import ScrollToTop from "./hooks/ScrollToTop";
 import routes from "./pages/routes";
@@ -16,7 +16,7 @@ function App() {
          <Navbar />
          <ScrollToTop />
          <div className="main">
-            <Suspense fallback={<div>Loading...</div>}>
+            <Suspense fallback={<Loader />}>
                <div className="content">{router}</div>
             </Suspense>
             <Footer />
