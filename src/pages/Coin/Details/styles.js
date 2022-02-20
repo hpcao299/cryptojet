@@ -12,16 +12,17 @@ const useStyles = makeStyles(theme => ({
    },
    statisticsList: {
       [theme.breakpoints.down("lg")]: {
-         minWidth: "430px",
-      },
-      [theme.breakpoints.down("md")]: {
-         minWidth: "500px",
+         width: "100%",
       },
 
       "& .MuiListItem-root": {
          padding: "12px 16px",
          justifyContent: "space-between",
          borderBottom: "1px solid rgba(0, 0, 0, 0.10)",
+
+         [theme.breakpoints.down("lg")]: {
+            padding: "12px 4px",
+         },
       },
 
       "& .MuiListItem-root:not(:last-child)": {
@@ -37,6 +38,10 @@ const useStyles = makeStyles(theme => ({
       },
    },
    coinDescription: {
+      [theme.breakpoints.down("lg")]: {
+         width: "100%",
+      },
+
       "& p": {
          marginBottom: "24px",
          color: theme.palette.info.main,

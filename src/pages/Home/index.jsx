@@ -13,42 +13,54 @@ function HomePage() {
 
    return (
       <>
-         <Typography variant="h4" sx={{ fontSize: "30px" }} gutterBottom>
+         <Typography variant="h4" sx={{ fontSize: [26, 30] }} gutterBottom>
             Global Crypto Stats
          </Typography>
          <Grid container sx={{ mb: 5 }}>
-            <Grid item lg={6}>
+            <Grid item xs={12} sm={6}>
                <Statistic title="Total Cryptocurrencies" value={globalStats.total} />
             </Grid>
-            <Grid item lg={6}>
+            <Grid item xs={12} sm={6}>
                <Statistic title="Total Exchanges" value={millify(globalStats.totalExchanges)} />
             </Grid>
-            <Grid item lg={6}>
+            <Grid item xs={12} sm={6}>
                <Statistic title="Total Market Cap" value={millify(globalStats.totalMarketCap)} />
             </Grid>
-            <Grid item lg={6}>
+            <Grid item xs={12} sm={6}>
                <Statistic title="Total 24h Volume" value={millify(globalStats.total24hVolume)} />
             </Grid>
-            <Grid item lg={6}>
+            <Grid item xs={12} sm={6}>
                <Statistic title="Total Markets" value={millify(globalStats.totalMarkets)} />
             </Grid>
          </Grid>
-         <Box sx={{ display: "flex", justifyContent: "space-between", mb: 2 }}>
-            <Typography variant="h4" sx={{ fontSize: "30px" }}>
+         <Box
+            sx={{
+               display: [null, "flex"],
+               justifyContent: "space-between",
+               mb: 2,
+            }}
+         >
+            <Typography variant="h4" sx={{ fontSize: [26, 30] }}>
                Top Cryptocurrencies in the World
             </Typography>
-            <Typography variant="h6" sx={{ fontWeight: 400 }}>
+            <Typography variant="h6" sx={{ fontWeight: 400, textAlign: "right" }}>
                <Link to="/cryptocurrencies" className="primary-link">
                   Show More
                </Link>
             </Typography>
          </Box>
          <Cryptocurrencies simplified />
-         <Box sx={{ display: "flex", justifyContent: "space-between", mb: 2 }}>
-            <Typography variant="h4" sx={{ fontSize: "30px" }}>
+         <Box
+            sx={{
+               display: [null, "flex"],
+               justifyContent: "space-between",
+               mb: 2,
+            }}
+         >
+            <Typography variant="h4" sx={{ fontSize: [26, 30] }}>
                Latest Crypto News
             </Typography>
-            <Typography variant="h6" sx={{ fontWeight: 400 }}>
+            <Typography variant="h6" sx={{ fontWeight: 400, textAlign: "right" }}>
                <Link to="/news" className="primary-link">
                   Show More
                </Link>

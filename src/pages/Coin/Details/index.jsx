@@ -23,7 +23,7 @@ function CoinDetailsPage() {
          <Typography
             variant="h4"
             align="center"
-            sx={{ fontWeight: 600, mt: 2 }}
+            sx={{ fontWeight: 600, mt: 2, fontSize: [26, 34] }}
             color="info.main"
             gutterBottom
          >

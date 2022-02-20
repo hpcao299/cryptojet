@@ -48,14 +48,14 @@ function LineChart({ currentPrice, coinName, coinHistory }) {
    return (
       <>
          <Box sx={{ display: "flex", mb: 1 }}>
-            <Typography color="info.main" variant="h5">
+            <Typography color="info.main" variant="h5" sx={{ display: ["none", "block"] }}>
                {coinName} Price Chart
             </Typography>
-            <Typography sx={{ ml: "auto", fontWeight: 500, mr: 2 }}>
+            <Typography sx={{ ml: [null, "auto"], fontWeight: 500, mr: 2 }}>
                {coinHistory?.data?.change}%
             </Typography>
-            <Typography sx={{ fontWeight: 500 }}>
-               Current {coinName} Price: ${currentPrice}
+            <Typography sx={{ fontWeight: 500, ml: ["auto", "0"] }}>
+               Price: ${currentPrice}
             </Typography>
          </Box>
          <Line data={data} options={options} />

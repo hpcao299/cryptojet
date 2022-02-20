@@ -112,7 +112,7 @@ function Info({ coinDetails }) {
                </List>
             </Box>
          </Grid>
-         <Grid item lg={6} xs={12}>
+         <Grid item lg={6} xs={12} sx={{ mb: [7, 0] }}>
             <Box className={classes.coinDescription}>
                <h3>What is {coinDetails?.name}?</h3>
                {HTMLReactParser(coinDetails.description)}
