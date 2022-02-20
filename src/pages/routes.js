@@ -1,8 +1,8 @@
 import { lazy } from "react";
 import CoinPage from "./Coin";
+import HomePage from "./Home";
 import NotFound from "./NotFound";
 
-const HomePage = lazy(() => import("./Home"));
 const CryptocurrenciesPage = lazy(() => import("./Cryptocurrencies"));
 const NewsPage = lazy(() => import("./News"));
 const CoinDetailsPage = lazy(() => import("./Coin/Details"));
