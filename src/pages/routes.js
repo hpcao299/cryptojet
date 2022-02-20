@@ -6,10 +6,12 @@ const HomePage = lazy(() => import("./Home"));
 const CryptocurrenciesPage = lazy(() => import("./Cryptocurrencies"));
 const NewsPage = lazy(() => import("./News"));
 const CoinDetailsPage = lazy(() => import("./Coin/Details"));
+const ExchangesPage = lazy(() => import("./Exchanges"));
 
 const routes = [
    { path: "/", element: <HomePage /> },
    { path: "/cryptocurrencies", element: <CryptocurrenciesPage /> },
+   { path: "/exchanges", element: <ExchangesPage /> },
    { path: "/news", element: <NewsPage /> },
    {
       path: "/coin",
