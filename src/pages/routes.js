@@ -1,12 +1,10 @@
-import { lazy } from "react";
 import CoinPage from "./Coin";
+import CoinDetailsPage from "./Coin/Details";
+import CryptocurrenciesPage from "./Cryptocurrencies";
+import ExchangesPage from "./Exchanges";
 import HomePage from "./Home";
+import NewsPage from "./News";
 import NotFound from "./NotFound";
-
-const CryptocurrenciesPage = lazy(() => import("./Cryptocurrencies"));
-const NewsPage = lazy(() => import("./News"));
-const CoinDetailsPage = lazy(() => import("./Coin/Details"));
-const ExchangesPage = lazy(() => import("./Exchanges"));
 
 const routes = [
    { path: "/", element: <HomePage /> },
