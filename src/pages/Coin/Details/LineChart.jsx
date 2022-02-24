@@ -35,9 +35,6 @@ function LineChart({ currentPrice, coinName, coinHistory }) {
    };
 
    const options = {
-      tooltips: {
-         mode: "index",
-      },
       yAxes: {
          ticks: {
             beginAtZero: true,

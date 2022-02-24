@@ -36,10 +36,18 @@ function CryptoNews({ simplified }) {
                                  width="40%"
                               />
                            </Box>
-                           <Typography paragraph>
-                              {cryptoNew.description > 50
-                                 ? `${cryptoNew.description.substring(0, 50)}...`
-                                 : cryptoNew.description}
+                           <Typography
+                              paragraph
+                              sx={{
+                                 display: "-webkit-box",
+                                 overflow: "hidden",
+                                 textOverflow: "ellipsis",
+                                 msTextOverflow: "ellipsis",
+                                 WebkitBoxOrient: "vertical",
+                                 WebkitLineClamp: 6,
+                              }}
+                           >
+                              {cryptoNew.description}
                            </Typography>
                            <Box
                               sx={{
