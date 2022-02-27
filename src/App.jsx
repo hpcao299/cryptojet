@@ -3,8 +3,8 @@ import { Suspense } from "react";
 import { useRoutes } from "react-router-dom";
 import { Footer, Loader, Navbar } from "./components";
 import customTheme from "./customTheme";
-import ScrollToTop from "./hooks/ScrollToTop";
 import routes from "./pages/routes";
+import ScrollToTop from "./utils/ScrollToTop";
 
 function App() {
    const router = useRoutes(routes);
